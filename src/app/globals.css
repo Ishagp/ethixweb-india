@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+:root {
+  /* Ethixweb Premium Theme Design Tokens */
+  --ethix-red: #e11d48;
+  --ethix-red-hover: #be123c;
+  --ethix-red-light: #fff1f2;
+  --bg-primary: #ffffff;
+  --bg-surface: #f8fafc;
+  --bg-subtle: #f1f5f9;
+  --charcoal-900: #0f172a;
+  --charcoal-700: #334155;
+  --charcoal-500: #64748b;
+  --border-subtle: #e2e8f0;
+}
+
+@theme inline {
+  --color-ethix-red: var(--ethix-red);
+  --color-ethix-red-hover: var(--ethix-red-hover);
+  --color-ethix-red-light: var(--ethix-red-light);
+  --color-charcoal-900: var(--charcoal-900);
+  --color-charcoal-700: var(--charcoal-700);
+  --color-charcoal-500: var(--charcoal-500);
+  --color-border-subtle: var(--border-subtle);
+  --color-surface: var(--bg-surface);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--charcoal-900);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
