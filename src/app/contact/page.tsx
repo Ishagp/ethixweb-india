@@ -74,13 +74,13 @@ export default function ContactPage() {
 
                 <div className="pt-3 border-t border-slate-100">
                   <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                    Indian Operations & Lab
+                    Client Support & Consultation
                   </span>
                   <p className="text-sm text-slate-800 font-medium mt-0.5">
-                    Tech Park Sector, Bengaluru
+                    Dedicated Support for Indian Enterprises
                   </p>
                   <p className="text-xs text-slate-500">
-                    Karnataka 560103, India
+                    Operating across IST business hours
                   </p>
                 </div>
 

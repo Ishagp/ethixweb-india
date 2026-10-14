@@ -312,7 +312,18 @@ Update lead status (`new`, `contacted`, `in_progress`, `closed`).
 
 ---
 
-## 12. Final Manual Testing Checklist
+## 12. Known Limitations
+
+1. **In-Memory Rate Limiting Scope:**
+   - The current rate limiting uses an in-memory sliding window algorithm inside Node.js runtime memory. In multi-region serverless deployments with dynamic container scaling, a distributed Redis cache (such as Upstash Redis) would be recommended for global cluster synchronization.
+2. **Dynamic Admin Page Prerendering:**
+   - The `/admin` dashboard relies on runtime cookie session verification via `@supabase/ssr` (`cookies()`), meaning this specific page is dynamically server-rendered rather than statically generated at build time.
+3. **Database Migration Pipeline:**
+   - Database schema setup is managed via SQL migrations (`supabase-schema.sql`). Automatic continuous integration migrations via Supabase CLI are not yet wired into the deployment pipeline.
+
+---
+
+## 13. Final Manual Testing Checklist
 
 Use this checklist to verify full system functionality before final submission:
 

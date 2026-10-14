@@ -28,11 +28,18 @@ export const getSupabaseServerClient = (): SupabaseClient => {
     throw new Error("Missing NEXT_PUBLIC_SUPABASE_URL environment variable.");
   }
 
-  // Use service role key if available, fallback to anon key for server operations
+  // Use service role key for privileged backend operations (bypasses RLS)
+  // If service role is not set, fallback to anon key but note that RLS restrictions will apply.
   const key = supabaseServiceRoleKey || supabaseAnonKey;
   if (!key) {
     throw new Error(
       "Missing SUPABASE_SERVICE_ROLE_KEY or NEXT_PUBLIC_SUPABASE_ANON_KEY environment variable."
+    );
+  }
+
+  if (!supabaseServiceRoleKey) {
+    console.warn(
+      "[SupabaseServerClient] Warning: SUPABASE_SERVICE_ROLE_KEY is not configured in environment. Operating with limited anon privileges."
     );
   }
 

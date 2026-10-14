@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = 2026;
@@ -11,23 +12,29 @@ export default function Footer() {
           <div className="space-y-4 md:col-span-1">
             <Link
               href="/"
-              className="flex items-center gap-2.5 inline-flex focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 rounded-lg"
+              className="flex items-center gap-3 inline-flex focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 rounded-lg"
               aria-label="Ethixweb India Homepage"
             >
-              <div className="w-9 h-9 rounded-xl bg-rose-600 flex items-center justify-center text-white font-bold text-lg shadow-sm">
-                E
+              <div className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center p-1.5 shadow-sm">
+                <Image
+                  src="/images/emblem.webp"
+                  alt="Ethixweb Emblem"
+                  width={26}
+                  height={26}
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold tracking-tight text-white">
-                  Ethixweb<span className="text-rose-500 font-extrabold">.</span>
+                <span className="text-xl font-extrabold tracking-tight text-white">
+                  Ethixweb<span className="text-rose-500">.</span>
                 </span>
-                <span className="text-[10px] uppercase tracking-wider font-semibold text-slate-400 -mt-1">
+                <span className="text-[10px] uppercase tracking-widest font-bold text-slate-400 -mt-1">
                   India
                 </span>
               </div>
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed">
-              Crafting premium, scalable digital platforms and high-conversion web solutions tailored for modern Indian enterprises and startups.
+              We manage digital operations, from AI automation and CRM integrations to custom websites and web applications tailored for growing enterprises.
             </p>
           </div>
 
@@ -88,11 +95,11 @@ export default function Footer() {
           {/* Contact & Presence */}
           <div className="space-y-3">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
-              Headquarters
+              Operations & Contact
             </h3>
             <div className="text-sm text-slate-400 space-y-1.5 leading-relaxed">
-              <p>Tech Park Sector, Bengaluru</p>
-              <p>Karnataka, India</p>
+              <p>Global Digital Operations Network</p>
+              <p>Dedicated Client Support for India</p>
               <p className="pt-2 text-slate-300">
                 Email:{" "}
                 <a

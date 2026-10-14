@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import Image from "next/image";
+
 interface NavLink {
   label: string;
   href: string;
@@ -36,17 +38,24 @@ export default function Navbar() {
           <Link
             href="/"
             onClick={closeMobileMenu}
-            className="flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 rounded-lg p-1 -m-1"
+            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 rounded-lg p-1 -m-1"
             aria-label="Ethixweb India Homepage"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-rose-600 to-rose-500 flex items-center justify-center text-white font-bold text-xl shadow-sm group-hover:scale-105 transition-transform duration-200">
-              E
+            <div className="w-9 h-9 rounded-lg bg-slate-950 flex items-center justify-center p-1.5 shadow-sm group-hover:scale-105 transition-transform duration-200">
+              <Image
+                src="/images/emblem.webp"
+                alt="Ethixweb Emblem"
+                width={28}
+                height={28}
+                className="w-full h-full object-contain"
+                priority
+              />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold tracking-tight text-slate-900 group-hover:text-rose-600 transition-colors">
-                Ethixweb<span className="text-rose-600 font-extrabold">.</span>
+              <span className="text-xl font-extrabold tracking-tight text-slate-900 group-hover:text-rose-600 transition-colors">
+                Ethixweb<span className="text-rose-600">.</span>
               </span>
-              <span className="text-[10px] uppercase tracking-wider font-semibold text-slate-400 -mt-1">
+              <span className="text-[10px] uppercase tracking-widest font-bold text-slate-400 -mt-1">
                 India
               </span>
             </div>
